@@ -62,11 +62,11 @@ module.exports = {
         
                 if (pagamentoStatus === 'approved') {
                   clearInterval(a)
-                  client.db.add(`${message.author.id}.saldo`, Number(args[0]))
+                  client.db.add(`${message.author.id}.saldo`, Number(args[0]).toFixed(2))
                   client.db.set(`${id}.pago`, `Sim`)   
 
                   let sucess = new EmbedBuilder()
-                  .setDescription(`> **Pagamento confirmado** Seu saldo agora é de: \`${client.db.get(`${message.member}.saldo`)} reais\``)
+                  .setDescription(`> **Pagamento confirmado** Seu saldo agora é de: \`${client.db.get(`${message.member}.saldo`).toFixed(2)} reais\``)
                   .setColor(client.color)
 
                   message.author.send({ embeds: [sucess] })

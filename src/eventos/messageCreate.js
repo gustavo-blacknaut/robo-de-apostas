@@ -1,14 +1,5 @@
 const { EmbedBuilder, Embed } = require("discord.js");
 module.exports = async (client, message) => {
-    if (message.content.startsWith(`<@!${client.user.id}>`) || message.content.startsWith(`<@${client.user.id}>`)) {
-        let embed = new EmbedBuilder()
-        .setColor(client.color)
-        .setDescription(`<:block:1039688364103827496> **|** Olá eu me chamo **Block Bot** eu sou um bot feito para ajudar outros servidores e tenho varias funções!\n<:warn:1039688369585803344> **|** Para saber todas minhas funções use o meu comando \`!info\``)
-        .setFooter({ text: `${client.foo}` })
-        
-       return message.reply({ embeds: [embed] });
-    }
-
     if(message.channel.type === 'dm') return 
     if(message.author.bot) return;
     if(!message.content.toLowerCase().startsWith(client.prefix)) return;

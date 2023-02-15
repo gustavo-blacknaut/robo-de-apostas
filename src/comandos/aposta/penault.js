@@ -67,8 +67,8 @@ module.exports = {
                     
                     client.channels.cache.get('1067964663700148257').send({ embeds: [ganhaembed] })
                 } else {
-                    let calcnegativo = Number(saldo) - Number(args[0])
-                    client.db.set(`${message.author.id}.saldo`, Number(calcnegativo))
+                    let calcnegativo = Number(saldo).toFixed(2) - Number(args[0]).toFixed(2)
+                    client.db.set(`${message.author.id}.saldo`, Number(calcnegativo).toFixed(2))
 
                     client.db.add(`${message.author.id}.perdeu`, 1)
 
@@ -79,7 +79,7 @@ module.exports = {
                     let embednaogol = new EmbedBuilder()
                     .setColor(client.color)
                     .setTitle(`O Atacante tacou na trave`)
-                    .setDescription(`Infelizmente você errou o gol, seu novo saldo e de \`R$ ${saldonovovelho}\``)
+                    .setDescription(`Infelizmente você errou o gol, seu novo saldo e de \`R$ ${saldonovovelho.toFixed(2)}\``)
 
                     message.reply({ embeds: [embednaogol] })
 

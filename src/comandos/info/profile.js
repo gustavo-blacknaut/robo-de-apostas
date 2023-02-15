@@ -15,10 +15,10 @@ module.exports = {
             let embed = new EmbedBuilder()
             .setColor(client.color)
             .setTitle(`**⚽ Seu Perfil de Apostas**`)
-            .setDescription(`Seu Saldo: \`${saldo}\`
-Total Depositado: \`${valorcolocado}\`
-Total ganhado: \`${valorganhado}\`
-Total retirado: \`${retirado}\`
+            .setDescription(`Seu Saldo: \`${saldo.toFixed(2)}\`
+Total Depositado: \`${valorcolocado.toFixed(2)}\`
+Total ganhado: \`${valorganhado.toFixed(2)}\`
+Total retirado: \`${retirado.toFixed(2)}\`
 Vezes que você apostou: \`${aposta}\`
     
 **Valor mínimo de saque e 5 reais para sacar entre no ->** https://discord.gg/kbcJeRZcpe`)
@@ -28,10 +28,10 @@ Vezes que você apostou: \`${aposta}\`
             let embed = new EmbedBuilder()
             .setColor(client.color)
             .setTitle(`**⚽ Perfil de Apostas do: ${user.username}**`)
-            .setDescription(`Saldo: \`${saldo}\`
-Total Depositado: \`${valorcolocado}\`
-Total ganhado: \`${valorganhado}\`
-Total retirado: \`${retirado}\``)
+            .setDescription(`Saldo: \`${saldo.toFixed(2)}\`
+Total Depositado: \`${valorcolocado.toFixed(2)}\`
+Total ganhado: \`${valorganhado.toFixed(2)}\`
+Total retirado: \`${retirado.toFixed(2)}\``)
           
             message.reply({ embeds: [embed] })             
         }

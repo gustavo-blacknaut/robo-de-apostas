@@ -14,7 +14,7 @@ module.exports = {
         .setColor(client.color)
         .setTitle(`**⚽ Conferir Pênalti**`)
         .setDescription(`
-**Valor: \`${client.db.get(`${args[0]}.valor`)}\`
+**Valor: \`${client.db.get(`${args[0]}.valor`).toFixed(2)}\`
 User: \`${client.db.get(`${args[0]}.user`)}\`
 Data: \`${client.db.get(`${args[0]}.data`)}\`
 Pago: \`${client.db.get(`${args[0]}.pago`)}\`**

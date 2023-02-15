@@ -12,7 +12,7 @@ module.exports = {
         if(!user) return message.reply({ content: `Já sabe ne!` })
         if(!args[1]) return message.reply({ content: `Já sabe ne!` })
 
-        client.db.set(`${user.id}.saldo`, Number(args[1]))
+        client.db.set(`${user.id}.saldo`, Number(args[1]).toFixed(2))
         message.reply({ content: `Pronto!` })
     }
 }
